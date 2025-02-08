@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{AE53157C-F2C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolPoliApp.Api", "SchoolPoliApp.Api\SchoolPoliApp.Api.csproj", "{BD9CE109-C20A-42E3-96BB-80F4ECFD14A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolPoliApp.Model", "SchoolPoliApp.Model\SchoolPoliApp.Model.csproj", "{32659149-63CC-4770-9AAC-55E50CCB5CA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{BD9CE109-C20A-42E3-96BB-80F4ECFD14A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD9CE109-C20A-42E3-96BB-80F4ECFD14A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD9CE109-C20A-42E3-96BB-80F4ECFD14A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32659149-63CC-4770-9AAC-55E50CCB5CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32659149-63CC-4770-9AAC-55E50CCB5CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32659149-63CC-4770-9AAC-55E50CCB5CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32659149-63CC-4770-9AAC-55E50CCB5CA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,5 +88,6 @@ Global
 		{C73A5DE6-5E12-4CBA-ADBA-642432409206} = {94170206-D78A-4CA3-BC99-6173BD594E3F}
 		{2B5B53F4-E8ED-42A7-B02D-BFA2DBC8A71D} = {94170206-D78A-4CA3-BC99-6173BD594E3F}
 		{BD9CE109-C20A-42E3-96BB-80F4ECFD14A0} = {AE53157C-F2C5-4835-8A66-83DCDC4D7966}
+		{32659149-63CC-4770-9AAC-55E50CCB5CA4} = {4E9ACFBA-5A6E-4CEE-A688-135B061B810B}
 	EndGlobalSection
 EndGlobal
