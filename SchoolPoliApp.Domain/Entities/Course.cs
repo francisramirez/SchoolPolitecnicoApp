@@ -12,5 +12,11 @@ namespace SchoolPoliApp.Domain.Entities
         [Column("CourseID")]
         [Key]
         public override int Id { get; set; }
+       
+        public string Title { get; set; }
+
+        public int Credits { get; set; }
+
+        public int DepartmentId { get; set; }
     }
 }
