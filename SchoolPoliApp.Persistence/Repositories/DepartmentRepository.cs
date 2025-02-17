@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using SchoolPoliApp.Domain.Base;
@@ -34,6 +35,13 @@ namespace SchoolPoliApp.Persistence.Repositories
         public override Task<OperationResult> UpdateEntityAsync(Department entity)
         {
             return base.UpdateEntityAsync(entity);
+        }
+
+        public async override Task<List<Department>> GetAllAsync()
+        {
+            return await _context.Departments
+                                 .Where(cd => cd.Deleted == false)
+                                 .ToListAsync();
         }
     }
 }

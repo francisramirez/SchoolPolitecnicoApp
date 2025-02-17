@@ -22,9 +22,9 @@ namespace SchoolPoliApp.Persistence.Repositories
                                 ILogger<CourseRepository> logger,
                                 IConfiguration configuration) : base(context)
         {
-            this.context = context;
-            this.logger = logger;
-            this.configuration = configuration;
+            _context = context;
+            _logger = logger;
+            _configuration = configuration;
         }
         public async Task<OperationResult> GetCourseByDepartmentId(int departmentId)
         {
