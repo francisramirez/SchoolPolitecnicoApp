@@ -11,8 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SchoolPoliApp.Infraestructure\SchoolPoliApp.Infraestructure.csproj" />
-    <ProjectReference Include="..\SchoolPoliApp.Persistence\SchoolPoliApp.Persistence.csproj" />
+    <ProjectReference Include="..\SchoolPoliApp.IOC\SchoolPoliApp.IOC.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SchoolPoliApp.Persistence.Context;
 using SchoolPoliApp.Persistence.Interfaces;
 using SchoolPoliApp.Persistence.Repositories;
-
+using SchoolPoliApp.IOC.Dependencies;
 namespace SchoolPoliApp.Api
 {
     public class Program
@@ -16,7 +16,7 @@ namespace SchoolPoliApp.Api
 
             builder.Services.AddDbContext<SchoolContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolDb")));
 
-            builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            builder.Services.AddDepartamentDependency();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

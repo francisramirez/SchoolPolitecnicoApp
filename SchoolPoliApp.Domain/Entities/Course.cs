@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchoolPoliApp.Domain.Entities
 {
+    [Table("Courses")]
     public sealed class Course : Base.BaseEntity<int>
     {
 
