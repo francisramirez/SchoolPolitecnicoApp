@@ -1,6 +1,6 @@
 namespace SchoolPoliApp.Persistence.Test
 {
-    public class UnitTest1
+    public class UnitTestDepartment
     {
         [Fact]
         public void Test1()

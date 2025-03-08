@@ -3,10 +3,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using SchoolPoliApp.Application.Dtos.Department;
+using SchoolPoliApp.Application.Exceptions;
 using SchoolPoliApp.Application.Interfaces;
 using SchoolPoliApp.Domain.Base;
 using SchoolPoliApp.Persistence.Interfaces;
-using SchoolPoliApp.Persistence.Repositories;
 
 namespace SchoolPoliApp.Application.Services
 {
@@ -41,7 +41,7 @@ namespace SchoolPoliApp.Application.Services
 
         public Task<OperationResult> Save(SaveDepartmentDto dto)
         {
-            throw new NotImplementedException();
+            if (dto == null) throw new DepartmentException("");
         }
 
         public Task<OperationResult> Update(UpdateDepartmentDto dto)

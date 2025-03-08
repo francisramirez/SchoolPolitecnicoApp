@@ -1,8 +1,4 @@
-﻿
-
-
-
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using SchoolPoliApp.Application.Interfaces;
 using SchoolPoliApp.Application.Services;
 using SchoolPoliApp.Persistence.Interfaces;
