@@ -28,86 +28,29 @@ namespace SchoolPoliApp.Application.Services
             throw new NotImplementedException();
         }
 
-        public Task<OperationResult> GetById(int Id)
+        public async Task<OperationResult> GetById(int Id)
         {
-            OperationResult result = new OperationResult();
-
-            try
-            {
-
-                result = _courseRepository.GetEntityByIdAsync(Id);
-            }
-            catch (Exception ex)
-            {
-
-                result.Message = "Error obteniendo el curso.";
-                result.Success = false;
-                _logger.LogError(result.Message, ex);
-            }
+            throw new NotImplementedException();
         }
 
-        public Task<OperationResult> GetCourseByDepartment(int departmentId)
+        public async Task<OperationResult> GetCourseByDepartment(int departmentId)
         {
-            OperationResult result = new OperationResult();
-            try
-            {
-               
-            }
-            catch (Exception)
-            {
-
-                result.Message = "Error obteniendo el curso.";
-                result.Success = false;
-                _logger.LogError(result.Message, ex);
-            }
+            throw new NotImplementedException();
         }
 
-        public Task<OperationResult> Remove(RemoveCourseDto dto)
+        public async Task<OperationResult> Remove(RemoveCourseDto dto)
         {
-            OperationResult result = new OperationResult();
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                result.Message = "Error obteniendo el curso.";
-                result.Success = false;
-                _logger.LogError(result.Message, ex);
-            }
+            throw new NotImplementedException();
         }
 
-        public Task<OperationResult> Save(SaveCourseDto dto)
+        public async Task<OperationResult> Save(SaveCourseDto dto)
         {
-            OperationResult result = new OperationResult();
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                result.Message = "Error obteniendo el curso.";
-                result.Success = false;
-                _logger.LogError(result.Message, ex);
-            }
+            throw new NotImplementedException();
         }
 
-        public Task<OperationResult> Update(UpdateCourseDto dto)
+        public async Task<OperationResult> Update(UpdateCourseDto dto)
         {
-            OperationResult result = new OperationResult();
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                result.Message = "Error obteniendo el curso.";
-                result.Success = false;
-                _logger.LogError(result.Message, ex);
-            }
+            throw new NotImplementedException();
         }
     }
 }

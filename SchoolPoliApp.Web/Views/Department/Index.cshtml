@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SchoolPoliApp.Application.Dtos.Department.DepartmentDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Deparment List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Administrator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChangeDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChangeUser)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Budget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Administrator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChangeDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChangeUser)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { id= item.DepartmentId }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.DepartmentId }) 
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

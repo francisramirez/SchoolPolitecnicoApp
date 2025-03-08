@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SchoolPoliApp.Persistence.Context;
+using SchoolPoliApp.IOC.Dependencies;
 namespace SchoolPoliApp.Web
 {
     public class Program
@@ -7,6 +10,11 @@ namespace SchoolPoliApp.Web
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddDbContext<SchoolContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolDb")));
+
+            builder.Services.AddDepartamentDependency();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
