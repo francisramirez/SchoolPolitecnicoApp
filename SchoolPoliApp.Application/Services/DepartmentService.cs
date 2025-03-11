@@ -32,7 +32,7 @@ namespace SchoolPoliApp.Application.Services
             try
             {
                 result.Data = (await _departmentRepository.GetAllAsync())
-                    .Select(depto => new Dtos.Department.DepartmentDto()
+                    .Select(depto => new DepartmentDto()
                     {
                         Administrator = depto.Administrator,
                         Budget = depto.Budget,
