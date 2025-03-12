@@ -17,7 +17,7 @@ namespace SchoolPoliApp.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var result = await departmentService.GetAll();
-            if (result.Success) 
+            if (result.Success)
             {
                 List<DepartmentDto> departmentList = (List<DepartmentDto>)result.Data;
 
@@ -28,8 +28,16 @@ namespace SchoolPoliApp.Web.Controllers
         }
 
         // GET: DepartmentAdmController/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
+            var result = await departmentService.GetById(id);
+
+            if (result.Success)
+            {
+                DepartmentDto departmentList = (DepartmentDto)result.Data;
+                return View(departmentList);
+            }
+            //departments.
             return View();
         }
 
@@ -42,11 +50,17 @@ namespace SchoolPoliApp.Web.Controllers
         // POST: DepartmentAdmController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create(SaveDepartmentDto saveDepartmentDto)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var result = await this.departmentService.Save(saveDepartmentDto);
+
+                if (result.Success)
+                    return RedirectToAction(nameof(Index));
+
+
+                return View();
             }
             catch
             {
@@ -55,19 +69,33 @@ namespace SchoolPoliApp.Web.Controllers
         }
 
         // GET: DepartmentAdmController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
+            var result = await departmentService.GetById(id);
+
+            if (result.Success)
+            {
+                DepartmentDto departmentList = (DepartmentDto)result.Data;
+                return View(departmentList);
+            }
+            //departments.
             return View();
         }
 
         // POST: DepartmentAdmController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(UpdateDepartmentDto updateDepartmentDto)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var result = await this.departmentService.Update(updateDepartmentDto);
+                if (result.Success)
+                    return RedirectToAction(nameof(Index));
+
+
+                return View();
+
             }
             catch
             {
@@ -75,25 +103,6 @@ namespace SchoolPoliApp.Web.Controllers
             }
         }
 
-        // GET: DepartmentAdmController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: DepartmentAdmController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

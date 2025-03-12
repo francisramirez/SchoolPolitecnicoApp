@@ -116,7 +116,7 @@ namespace SchoolPoliApp.Application.Services
         }
         public async Task<OperationResult> Update(UpdateDepartmentDto dto)
         {
-            OperationResult result = new OperationResult { Success = false };
+            OperationResult result = new OperationResult();
 
             try
             {
