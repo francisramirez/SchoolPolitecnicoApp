@@ -1,0 +1,90 @@
+﻿@model IEnumerable<SchoolPoliApp.WebApi.Models.Department.DepartmentModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Department Adm</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.startDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.administrator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.creationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.creationUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modifyDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userMod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.deleted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.budget)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.startDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.administrator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.creationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.creationUser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.modifyDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userMod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.deleted)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
