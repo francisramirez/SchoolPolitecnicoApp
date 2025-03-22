@@ -36,6 +36,11 @@ namespace SchoolPoliApp.Api.Controllers
         [HttpPost("SaveDepartment")]
         public async Task<IActionResult> Post([FromBody] Department department)
         {
+            if (department == null)
+            {
+                return BadRequest("Department cannot be null.");
+            }
+
             var departments = await _departmentRepository.SaveEntityAsync(department);
             return Ok(departments);
         }
@@ -44,7 +49,18 @@ namespace SchoolPoliApp.Api.Controllers
         [HttpPost("UpdateDepartment")]
         public async Task<IActionResult> Put([FromBody] Department department)
         {
+            if (department == null)
+            {
+                return BadRequest("Department cannot be null.");
+            }
+
             var departments = await _departmentRepository.UpdateEntityAsync(department);
+            
+            if (department == null)
+            {
+                return NotFound();
+            }
+
             return Ok(departments);
         }
 
